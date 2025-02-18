@@ -117,24 +117,10 @@
 
     window.parent.postMessage({
       type: 'GuestDetails',
-      data: mockGuests[index],
-    }, 'http://app.apaleo.local:4200/');
-  }
-
-  // iframe resize script
-
-  // Send height when the page loads
-  window.addEventListener('load', sendHeight);
-
-  // Send height when the content inside iframe changes
-  new MutationObserver(sendHeight).observe(document.body, {subtree: true, childList: true});
-
-  function sendHeight() {
-    window.parent.postMessage({
-      type: 'IframeHeight',
-      height: document.body.scrollHeight,
+      value: mockGuests[index],
     }, 'http://app.apaleo.local:4200/');
   }
 </script>
+<script onload="broadcastIframeHeight()" src="https://cdn.apaleo.com/scripts/broadcast-iframe-resize.min.js" defer></script>
 </body>
 </html>

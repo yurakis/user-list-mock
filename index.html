@@ -31,11 +31,9 @@
 
     return {
       title: ["Mr", "Ms", "Dr", "Prof", "Mrs", "Other"][Math.floor(Math.random() * 6)],
-      gender: ["Female", "Male", "Other", "Unknown"][Math.floor(Math.random() * 4)],
-      firstName: firstNames[index % firstNames.length],
+      firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
       middleInitial: Math.random() > 0.5 ? "M" : undefined,
-      lastName: lastNames[index % lastNames.length],
-      secondLastName: Math.random() > 0.5 ? lastNames[(index + 1) % lastNames.length] : undefined,
+      lastName: lastNames[Math.floor(Math.random() * lastNames.length)],
       email: `guest${index + 1}@example.com`,
       phone: `+49 170 123456${index}`,
       address: {
@@ -64,30 +62,6 @@
       personalTaxId: `TAX${20000 + index}`,
       preferredLanguage: ["en", "de", "fr", "it", "es"][Math.floor(Math.random() * 5)],
       birthDate: `199${Math.floor(Math.random() * 10)}-0${Math.floor(Math.random() * 9) + 1}-1${Math.floor(Math.random() * 9)}`,
-      birthPlace: "Berlin",
-      birthFirstName: firstNames[index % firstNames.length],
-      birthLastName: lastNames[index % lastNames.length],
-      motherFirstName: firstNames[(index + 2) % firstNames.length],
-      motherLastName: lastNames[(index + 2) % lastNames.length],
-      borderCrossingPlace: Math.random() > 0.5 ? "Frankfurt Airport" : undefined,
-      borderCrossingDate: Math.random() > 0.5 ? `2024-01-${10 + index}` : undefined,
-      relationshipToPrimaryGuest: [
-        "Grandparent",
-        "Grandchild",
-        "GreatGrandparent",
-        "GreatGrandchild",
-        "Parent",
-        "Child",
-        "Sibling",
-        "ParentInLaw",
-        "ChildInLaw",
-        "SiblingInLaw",
-        "Spouse",
-        "UncleOrAunt",
-        "NephewOrNiece",
-        "Guardian",
-        "Other",
-      ][Math.floor(Math.random() * 15)],
     };
   });
 

@@ -82,6 +82,8 @@
       value: mockGuests[index],
     }, '*');
   }
+
+  console.log('is iframe', window.self !== window.top);
 </script>
 <script onload="broadcastIframeHeight()" src="https://cdn.apaleo.com/scripts/broadcast-iframe-resize.min.js" defer></script>
 </body>

@@ -81,6 +81,12 @@
       type: 'GuestDetails',
       value: mockGuests[index],
     }, '*');
+
+    try {
+      navigator.clipboard.writeText(mockGuests[index].firstName + ' ' + mockGuests[index].lastName);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
   }
 
   console.log('is iframe', window.self !== window.top);
